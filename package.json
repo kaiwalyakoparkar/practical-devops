@@ -1,0 +1,24 @@
+{
+  "name": "practical-devops",
+  "version": "1.0.0",
+  "description": "Practice your devops with this simple nodejs application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaiwalyakoparkar/practical-devops.git"
+  },
+  "keywords": [
+    "nodejs",
+    "devops",
+    "api"
+  ],
+  "author": "Kaiwalya Koparkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaiwalyakoparkar/practical-devops/issues"
+  },
+  "homepage": "https://github.com/kaiwalyakoparkar/practical-devops#readme"
+}
