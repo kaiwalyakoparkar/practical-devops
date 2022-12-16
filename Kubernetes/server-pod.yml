@@ -1,0 +1,23 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bnb-backend-pod
+  namespace: demo
+  labels:
+    env: bnb-test
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: bnb-backend-ctr
+    imagePullPolicy: Always
+    image: kaiwalyakoparkar/test-server:1.0
+    ports:
+    - containerPort: 5000
+    resources:
+      requests:
+        memory: "128Mi"
+        cpu: "500m"
+      limits:
+        memory: "512Mi"
+        cpu: "1000m"
