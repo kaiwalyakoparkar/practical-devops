@@ -23,12 +23,12 @@ spec:
           - name: USER_NAME
             valueFrom:
               secretKeyRef: 
-                  name: mongo-secret
+                  name: mongodb-secret
                   value: mongo-username
           - name: USER_PWD
             valueFrom:
               secretKeyRef:
-                  name: mongo-secret
+                  name: mongodb-secret
                   value: mongo-password
           - name: DB_URL
             valueFrom:
