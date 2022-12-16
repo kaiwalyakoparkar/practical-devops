@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-lb
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 9000
+    targetPort: 30100
+  selector:
+    app: webapp
