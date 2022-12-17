@@ -20,33 +20,32 @@ spec:
         ports:
         - containerPort: 3000
         env:
-          - name: USER_NAME
-            valueFrom:
-              secretKeyRef: 
-                  name: mongodb-secret
-                  value: mongo-username
-          - name: USER_PWD
-            valueFrom:
-              secretKeyRef:
-                  name: mongodb-secret
-                  value: mongo-password
-          - name: DB_URL
-            valueFrom:
-              configMapKeyRef:
-                name: mongodb-configmap
-                value: database_url
-
+        - name: USER_NAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-user
+        - name: USER_PWD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-password 
+        - name: DB_URL
+          valueFrom:
+            configMapKeyRef:
+              name: mongo-config
+              key: mongo-url
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: webapp-service
 spec:
-  type: NodePort # Defines as external service
+  type: NodePort
   selector:
     app: webapp
   ports:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-      nodePort: 30100 #range should be between 30000 to 32767 - required for nodeport type
+      nodePort: 30100
