@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: mongo
+        image: mongo:5.0
         ports:
         - containerPort: 27017
         env:
@@ -24,12 +24,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: mongo-secret
-              key: mongo-username
+              key: mongo-user
         - name: MONGO_INITDB_ROOT_PASSWORD
-          valueFrom: 
+          valueFrom:
             secretKeyRef:
               name: mongo-secret
-              key: mongo-password
+              key: mongo-password  
 ---
 apiVersion: v1
 kind: Service
