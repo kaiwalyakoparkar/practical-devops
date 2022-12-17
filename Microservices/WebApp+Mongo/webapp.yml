@@ -36,16 +36,17 @@ spec:
               name: mongo-config
               key: mongo-url
 ---
+# Commenting stuff because I have added loadbalancer service
 apiVersion: v1
 kind: Service
 metadata:
   name: webapp-service
 spec:
-  type: NodePort
+  # type: NodePort * If we don't want loadbalancer then we use this type
   selector:
     app: webapp
   ports:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-      nodePort: 30100
+      # nodePort: 30100 * Node port
