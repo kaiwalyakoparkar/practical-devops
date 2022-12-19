@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cns-website
+  namespace: app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: cns-website
+  template:
+    metadata:
+      labels:
+        run: cns-website 
+    spec:
+      containers:
+      - name: cns-website
+        image: docker.io/anaisurlichs/cns-website:0.0.6
+        ports:
+          - containerPort: 80
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: 200m
+        securityContext:
+          allowPrivilegeEscalation: false
