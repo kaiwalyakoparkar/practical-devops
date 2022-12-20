@@ -12,6 +12,8 @@ Reference application taken from [AnaisUrlich/kyverno-example](https://github.co
 
 5. Alternate command to install kyverno `helm install kyverno kyverno/kyverno -n kyverno --create-namespace --set replicaSet=3`
 
+If namespace error use (`helm uninstall kyverno -n kyverno`)
+
 6. Take a policy from [Kyverno Policy Tempaltes](https://kyverno.io/policies/) eg: [disallow-latest-tags](https://kyverno.io/policies/best-practices/disallow_latest_tag/disallow_latest_tag/) and paste it into your file named eg `my-policy.yml`
 
 7. Tweak the policy a little bit like changes in following categories under `specs`
