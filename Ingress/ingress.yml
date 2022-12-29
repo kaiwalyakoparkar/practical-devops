@@ -12,7 +12,7 @@ spec:
       port:
         number: 3000
   rules:
-  - host: localhost
+  - host: hello.test
     http:
       paths:
       - path: /ng
@@ -21,7 +21,7 @@ spec:
           service:
             name: ng-service
             port:
-              number: 3000
+              number: 80
       - path: /wmd
         pathType: Prefix
         backend:
