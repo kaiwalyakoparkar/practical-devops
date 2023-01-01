@@ -12,3 +12,5 @@ helm install prometheus prometheus-community/kube-prometheus-stack -n monitoring
 
 Portforward the request to the service
 `kubectl port-forward svc/prometheus-grafana 3000:80 -n monitoring`
+
+Visit `localhost:3000` and access your Grafana dashboard
