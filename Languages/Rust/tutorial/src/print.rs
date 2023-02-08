@@ -14,4 +14,7 @@ pub fn run() {
 
     //Named arguments
     println!("{name} is learning {lang}", name="Kaiwalya", lang="rust");
+
+    //Debug traits
+    println!("{:?}", (12, true, "Hello"));
 }
