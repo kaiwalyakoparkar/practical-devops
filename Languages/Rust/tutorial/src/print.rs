@@ -10,5 +10,8 @@ pub fn run() {
     println!("{} is learning {}", "Kaiwalya", "Rust");
 
     //Multiple placeholders
-    println!("{0} is learning {1}, {0} is {2}", "Kaiwalya", "Rust", "student")
+    println!("{0} is learning {1}, {0} is {2}", "Kaiwalya", "Rust", "student");
+
+    //Named arguments
+    println!("{name} is learning {lang}", name="Kaiwalya", lang="rust");
 }
