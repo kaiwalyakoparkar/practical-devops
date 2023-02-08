@@ -15,4 +15,8 @@ pub fn run() {
     //Will not generate error coz of mut (mutable option added to it)
     pencil = 5;
     println!("But now he has {} pencils", pencil);
+
+    //Contants (We need to provide the type if we are using constants)
+    const ID: i32 = 001;
+    println!("ID: {}", ID);
 }
