@@ -1,5 +1,6 @@
 //importing the print file
-mod print;
+// mod print;
+mod vars;
 
 fn main() {
 
@@ -7,5 +8,6 @@ fn main() {
     println!("Hello world");
 
     //Accessing the funtion run() in print file
-    print::run();
+    // print::run();
+    vars::run();
 }
