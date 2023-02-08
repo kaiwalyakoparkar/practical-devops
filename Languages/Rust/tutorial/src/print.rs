@@ -17,4 +17,7 @@ pub fn run() {
 
     //Debug traits
     println!("{:?}", (12, true, "Hello"));
+
+    //Basic maths
+    println!("10 + 10 is {}", 10+10);
 }
