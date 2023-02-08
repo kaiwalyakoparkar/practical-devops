@@ -19,4 +19,8 @@ pub fn run() {
     //Contants (We need to provide the type if we are using constants)
     const ID: i32 = 001;
     println!("ID: {}", ID);
+
+    //Multiple vars
+    let ( my_name, my_age) = ("Kaiwalya", 19);
+    println!("{}'s age is {}", my_name, my_age);
 }
