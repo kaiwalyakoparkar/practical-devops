@@ -9,7 +9,8 @@
 // mod vectors;
 // mod conditionals;
 // mod functions;
-mod pointers;
+// mod pointers;
+mod structs;
 
 fn main() {
 
@@ -27,5 +28,6 @@ fn main() {
     // vectors::run();
     // conditionals::run();
     // functions::run();
-    pointers::run();
+    // pointers::run();
+    structs::run();
 }
