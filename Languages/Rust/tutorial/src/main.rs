@@ -10,7 +10,8 @@
 // mod conditionals;
 // mod functions;
 // mod pointers;
-mod structs;
+// mod structs;
+mod enums;
 
 fn main() {
 
@@ -29,5 +30,6 @@ fn main() {
     // conditionals::run();
     // functions::run();
     // pointers::run();
-    structs::run();
+    // structs::run();
+    enums::run();
 }
