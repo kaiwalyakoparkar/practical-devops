@@ -32,4 +32,17 @@ pub fn run() {
     //Remove last value
     number.pop();
     println!("After removing {:?}", number);
+
+    //Loop through vector
+    for x in number.iter() {
+        println!("{}", x);
+    }
+
+    println!("After mutating:");
+    
+    //Loop and mutate value
+    for x in number.iter_mut() {
+        *x *= 2;
+        println!("{}", x);
+    }
 }
