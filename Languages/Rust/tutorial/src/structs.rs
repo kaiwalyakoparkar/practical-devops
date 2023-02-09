@@ -5,7 +5,7 @@ struct Color {
 }
 
 //Tuple struct
-struct Color_tuple(i32, i32, i32);
+struct ColorTuple(i32, i32, i32);
 
 //Structure with member function
 struct Person {
@@ -51,7 +51,7 @@ pub fn run() {
     println!("Color: {} {} {}", c.red, c.blue, c.green);
 
     //Struct 2
-    let mut c2 = Color_tuple(100, 100, 100);
+    let mut c2 = ColorTuple(100, 100, 100);
     println!("Color Tuple: {} {} {}", c2.0, c2.1, c2.2);
 
     //Struct 3
