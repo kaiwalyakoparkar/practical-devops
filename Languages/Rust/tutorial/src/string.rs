@@ -28,4 +28,12 @@ pub fn run() {
 
     //Get Length
     println!("Length is {}", msg2.len());
+
+    //Pushing to string with capacity
+    let mut s = String::with_capacity(10);
+    s.push('a');
+    s.push('b');
+
+    //Assertion testing - It will output nothing if it is true
+    assert_eq!(2, s.len());
 }
