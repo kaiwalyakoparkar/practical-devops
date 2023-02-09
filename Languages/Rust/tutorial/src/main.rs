@@ -4,7 +4,8 @@
 // mod types;
 // mod string;
 // mod loops;
-mod tuples;
+// mod tuples;
+mod arrays;
 
 fn main() {
 
@@ -17,5 +18,6 @@ fn main() {
     // types::run();
     // string::run();
     // loops::run();
-    tuples::run();
+    // tuples::run();
+    arrays::run();
 }
