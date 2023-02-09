@@ -11,12 +11,13 @@
 // mod functions;
 // mod pointers;
 // mod structs;
-mod enums;
+// mod enums;
+mod cli;
 
 fn main() {
 
     //Running print command
-    println!("Hello from main");
+    // println!("Hello from main");
 
     //Accessing the funtion run() in print file
     // print::run();
@@ -31,5 +32,6 @@ fn main() {
     // functions::run();
     // pointers::run();
     // structs::run();
-    enums::run();
+    // enums::run();
+    cli::run();
 }
