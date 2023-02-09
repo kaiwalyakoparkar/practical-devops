@@ -8,7 +8,8 @@
 // mod arrays;
 // mod vectors;
 // mod conditionals;
-mod functions;
+// mod functions;
+mod pointers;
 
 fn main() {
 
@@ -25,6 +26,6 @@ fn main() {
     // arrays::run();
     // vectors::run();
     // conditionals::run();
-    functions::run();
-
+    // functions::run();
+    pointers::run();
 }
