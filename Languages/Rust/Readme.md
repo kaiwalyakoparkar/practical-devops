@@ -1,6 +1,3 @@
-# Rust
+# Rust 🦀
 
-- `cargo init`
-- `cargo run`
-- `cargo build`
-- `cargo build --release`
+Blog: https://blogs.kaiwalyakokparkar.com/what-is-rust/
