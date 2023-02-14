@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: wmd
 spec:
   selector:
     matchLabels:
-      app: myapp
+      app: wmd
   replicas: 2
   template:
     metadata:
       labels:
-        app: myapp
+        app: wmd
     spec:
       containers:
-      - name: myapp
-        image: nanajanashia/argocd-app:1.0
+      - name: wmd-ctr
+        image: kaiwalyakoparkar/wemakedevs:1.0
         ports:
-        - containerPort: 8080
+        - containerPort: 3000

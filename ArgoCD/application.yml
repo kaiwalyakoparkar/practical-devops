@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-argo-application
+  name: wmd-argo-application
   namespace: argocd
 spec:
   project: default
 
   source:
-    repoURL: https://gitlab.com/nanuchi/argocd-app-config.git
+    repoURL: https://github.com/kaiwalyakoparkar/practical-devops.git
     targetRevision: HEAD
-    path: dev
+    path: ArgoCD/dev
   destination: 
     server: https://kubernetes.default.svc
-    namespace: myapp
+    namespace: wmd
 
   syncPolicy:
     syncOptions:
