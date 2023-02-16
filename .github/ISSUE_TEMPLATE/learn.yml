@@ -1,0 +1,12 @@
+name: "Learn - "
+body:
+  - type: textarea
+    attributes:
+      label: Name of the topic you are tracking
+  - type: checkboxes
+    attributes:
+      options:
+      - label:  Learn
+      - label: Create practical demo
+      - label: Write blog
+      - label: Create video
