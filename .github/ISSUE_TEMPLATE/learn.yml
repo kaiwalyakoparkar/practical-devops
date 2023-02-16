@@ -2,6 +2,8 @@ name: "📚 Learn"
 description: Start a learning checklist
 title: "[Learn] <name>"
 labels: [Learning]
+assignees:
+  - kaiwalyakoparkar
 body:
   - type: checkboxes
     attributes:
