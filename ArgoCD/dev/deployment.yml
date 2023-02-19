@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: wmd
-  replicas: 5
+  replicas: 3
   template:
     metadata:
       labels:
