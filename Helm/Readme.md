@@ -1,3 +1,12 @@
+# Helm
+You can learn helm from the given Blog and Youtube Videos
+- [Blogs](https://blogs.kaiwalyakoparkar.com/what-is-helm)
+
+[![YouTube Video](https://img.youtube.com/vi/fw97GL6LHhg/hqdefault.jpg)](https://youtu.be/fw97GL6LHhg) 
+
+
+
+
 ```bash
 #Helm chart creation
 helm create <name>
@@ -32,3 +41,6 @@ helm repo update <chart-name>
 # search a keywork in chart
 helm search repo <keyword>
 ```
+
+
+
