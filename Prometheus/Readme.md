@@ -1,5 +1,5 @@
-# Promethus
-You can learn Promethus from the following blogs and youtube videos
+# Prometheus
+You can learn Prometheus from the following blogs and youtube videos
 
 - [Blog](https://blogs.kaiwalyakoparkar.com/introduction-to-prometheus)
 
