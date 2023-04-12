@@ -36,6 +36,3 @@ helm repo update <chart-name>
 # search a keywork in chart
 helm search repo <keyword>
 ```
-
-
-
