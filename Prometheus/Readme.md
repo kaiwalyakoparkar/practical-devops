@@ -1,4 +1,10 @@
-#Steps and commands
+# Prometheus
+
+You can learn Prometheus from the following blogs and youtube videos
+- [Blog](https://blogs.kaiwalyakoparkar.com/introduction-to-prometheus)
+ [![YouTube Video](https://img.youtube.com/vi/EcixeZzyaVc/hqdefault.jpg)](https://youtu.be/EcixeZzyaVc)
+ 
+# Steps and commands
 
 Create seperate namespace
 `kubectl create namespace monitoring`
