@@ -1,4 +1,5 @@
 # ArgoCD
+
 You can learn ArgoCd from the following blog
 - [Blog](https://blogs.kaiwalyakoparkar.com/what-is-argocd)
 
