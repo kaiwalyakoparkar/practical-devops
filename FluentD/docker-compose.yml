@@ -29,7 +29,7 @@ services:
     command: [ /bin/sh , -c , "chmod +x /app/app.sh && ./app/app.sh"]
   elasticsearch: # port 9200
     platform: "linux/amd64"
-    image: elasticsearch:7.9.1
+    image: elasticsearch:8.7.0
     container_name: elasticsearch
     environment:
     - node.name=elasticsearch
@@ -41,11 +41,11 @@ services:
         soft: -1
         hard: -1
   kibana:
-    image: kibana:7.9.1
+    image: kibana:8.7.0
     platform: "linux/amd64"
     container_name: kibana
     ports:
       - "5601:5601"
     environment:
-      ELASTICSEARCH_URL: http://elasticsearch:9200
-      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+      ELASTICSEARCH_URL: http://host.docker.internal:9200
+      ELASTICSEARCH_HOSTS: http://host.docker.internal:9200
