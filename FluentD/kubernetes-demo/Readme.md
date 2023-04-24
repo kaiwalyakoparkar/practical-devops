@@ -5,4 +5,8 @@
 - Setup rbac file for permissions to use every pods metadata and append it to the logs and apply to cluster
 - Now apply deamonset config
 - check if fluentd pod is running `kubectl -n fluentd get pods`
+- Apply sample counter app
+- Check the logs being added to files in the `fluentd-xxxx` pod
+- Apply elastic and kibana deployement in `elastic-kibana` namespace
+- port forward kibana service to 5601 `k -n elastic-kibana port-forward svc/kibana 5601`
 - Detailed doc: https://github.com/marcel-dempers/docker-development-youtube-series/tree/master/monitoring/logging/fluentd/kubernetes
