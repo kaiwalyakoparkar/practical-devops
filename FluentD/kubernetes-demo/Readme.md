@@ -1,1 +1,8 @@
 - Create custom fluentd image with help of documentation on where you want to send the output using material in `dockerfile` folder
+- Push the image to docker hub
+- Setup configmaps and apply them
+- Setup deamonset config (yml) file (Don't apply yet)
+- Setup rbac file for permissions to use every pods metadata and append it to the logs and apply to cluster
+- Now apply deamonset config
+- check if fluentd pod is running `kubectl -n fluentd get pods`
+- Detailed doc: https://github.com/marcel-dempers/docker-development-youtube-series/tree/master/monitoring/logging/fluentd/kubernetes
