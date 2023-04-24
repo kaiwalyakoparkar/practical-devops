@@ -1,0 +1,1 @@
+- Create custom fluentd image with help of documentation on where you want to send the output using material in `dockerfile` folder
