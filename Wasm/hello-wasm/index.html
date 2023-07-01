@@ -15,7 +15,7 @@
         ).then(bytes => 
             WebAssembly.instantiate(bytes)
         ).then(obj => {
-            console.log(obj.instance.exports.add(2, 3));
+            console.log(obj.instance.exports.add(5, 3));
         });
     </script>
 

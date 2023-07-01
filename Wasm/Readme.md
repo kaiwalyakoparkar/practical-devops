@@ -14,6 +14,6 @@ Update the code to execute the wasm module
 
 `wasm-pack build`
 
-Run in browser
+Run index.html file in browser (via Live server *optional)
 
 [Reference video](https://youtu.be/YHJjmsw_Sx0)
