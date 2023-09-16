@@ -10,7 +10,7 @@ func main() {
 	fruitList[3] = "Grapes"
 
 	fmt.Println(fruitList)//Prints the array
-	fmt.Println(len(ist))//Prints the length of array strangly gives 4 here
+	fmt.Println(len(fruitList))//Prints the length of array strangly gives 4 here
 
 	var vegList = [4]string{"potato", "mushroom", "brinjal"}
 	fmt.Println(vegList)
