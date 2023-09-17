@@ -9,7 +9,7 @@ const myurl string = "https://lco.dev:3000/learn?coursename=reactjs"
 
 func main() {
 	fmt.Println("welcome to handling URL")
-	fmt.Printf(myurl, "\n")
+	fmt.Println(myurl, "\n")
 	result, _ := url.Parse(myurl)
 	fmt.Println(result.Scheme)
 	fmt.Println(result.Host)
