@@ -6,11 +6,11 @@ import (
 	"net/http"
 )
 
-const url = "https://lco.dev"
+const murl = "https://lco.dev"
 
 func main()  {
 	fmt.Printf("LCO web request")
-	response, err := http.Get(url)
+	response, err := http.Get(murl)
 
 	if err != nil {
 		panic(err)
