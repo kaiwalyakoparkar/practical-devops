@@ -6,15 +6,22 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/kaiwalyakoparkar/api/models"
+	"github.com/kaiwalyakoparkar/practical-devops/tree/main/Languages/Go/Projects/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"github.com/joho/godotenv"
 )
 
 //Variable options to use later in the database connection
-const connectionString = "Secret"
+env_error := godotenv.Load("../.env")
+if env_error != nil {
+	log.Fatal("No env file found")
+}
+
+const connectionString = os.Getenv("DB_STRING")
+
 const dbname = "netflix"
 const colname = "watched"
 
@@ -115,4 +122,17 @@ func deleteAllMovie() int64 {
 
 	//return the delete count
 	return deleted.DeletedCount
+}
+
+//Get all movies from database
+func getAllMovies() {
+
+	//Here the cursor is returned and not the actual data
+	curr, err := collection.Find(context.Background(), bson.M{{}})
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
 }
