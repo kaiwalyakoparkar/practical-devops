@@ -14,7 +14,7 @@ import (
 )
 
 //Variable options to use later in the database connection
-const connectionString = "mongodb+srv://kaiwalya:trial@cluster0.ku5a95e.mongodb.net/?retryWrites=true&w=majority"
+const connectionString = "Secret"
 const dbname = "netflix"
 const colname = "watched"
 
