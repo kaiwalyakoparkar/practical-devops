@@ -21,6 +21,7 @@ if env_error != nil {
 }
 
 const connectionString = os.Getenv("DB_STRING")
+
 const dbname = "netflix"
 const colname = "watched"
 
