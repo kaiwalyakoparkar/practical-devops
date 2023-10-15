@@ -1,4 +1,4 @@
-module github.com/kaiwalyakoparkar/api
+module github.com/kaiwalyakoparkar/practical-devops/tree/main/Languages/Go/Projects
 
 go 1.20
 
