@@ -1,32 +1,24 @@
 package main
 
-//Importing essential packages
 import (
 	"fmt"
-	"net/http"
-	"github.com/gin-gonic/gin"
+	"log"
+
+	"github.com/joho/godotenv"
+	routers "github.com/kaiwalyakoparkar/practical-devops/tree/main/Languages/Go/Projects/router"
 )
 
-//This is the main function
 func main() {
-	fmt.Println("This is an mongo-api")
+	fmt.Println("✅ API Started")
+	r := routers.Router()
 	
-	//Defining router
-	router := gin.Default()
+	env_error := godotenv.Load("../.env")
+	if env_error != nil {
+		log.Fatal("No env file found")
+	}
+	fmt.Println("🔒 Env loaded")
 
-	//All the routes here
-	router.GET("/ping", welcome)
+	fmt.Println("🚚 Starting server")
 
-	//Runs on 8080 port of localhost
-	router.Run("localhost:8080")
+	log.Fatal(r.Run(":8080"))
 }
-
-
-//=======Goes in contollers=========
-//Function definition
-func welcome(c *gin.Context) {
-	//Responding with simple json info
-	c.IndentedJSON(http.StatusOK, gin.H{"message": "pong!"})
-}
-
-//===== Goes in Models =========
