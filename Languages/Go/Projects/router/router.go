@@ -1,14 +1,25 @@
-package router
+package routers
 
 import (
-	"github.com/gorilla/mux"
-	contollers "github.com/kaiwalyakoparkar/practical-devops/tree/main/Languages/Go/Projects/controllers"
+	"fmt"
+
+	"github.com/gin-gonic/gin"
+	controllers "github.com/kaiwalyakoparkar/practical-devops/tree/main/Languages/Go/Projects/controllers"
 )
 
-func Router() *mux.Router {
-	routers := mux.NewRouter()
+func Router() *gin.Engine {
+	router := gin.Default()
 
-	routers.Handle("/api/movies", contollers.g)
+	fmt.Println("🎉 Server started")
 
-	return routers
+	//Router perfoming on all records
+	router.GET("/api/movies", controllers.GetAllMovies)
+	router.DELETE("/api/movies", controllers.DeleteAllMovies)
+
+	//Router perfoming on specific records
+	router.POST("/api/movie", controllers.CreateMovie)
+	router.PUT("/api/movie/:id", controllers.MarkedAsWatched)
+	router.DELETE("/api/movie/:id", controllers.DeleteMovie)
+
+	return router
 }
