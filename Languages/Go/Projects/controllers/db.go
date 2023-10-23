@@ -14,9 +14,9 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	// "github.com/joho/godotenv"
 )
 
-var connectionString = os.Getenv("DB_STRING")
 
 const dbname = "netflix"
 const colname = "watched"
@@ -25,8 +25,11 @@ var collection *mongo.Collection
 
 //Method to connect and initiate the database
 func init() {
+	var connectionString = os.Getenv("DB_STRING")
+
 	//Attaching the stream to the options
 	clientOption := options.Client().ApplyURI(connectionString)
+
 	//Connecting the database
 	client, err := mongo.Connect(context.TODO(),clientOption)
 
@@ -130,7 +133,7 @@ func getAllMovies() []primitive.M{
 		log.Fatal(err)
 	}
 
-	var movies = []primitive.M
+	var movies = []primitive.M{}
 
 	for curr.Next(context.Background()) {
 		var movie bson.M
@@ -157,7 +160,7 @@ func GetAllMovies(g *gin.Context) {
 
 //Calls the helper method to create the movie
 func CreateMovie(g *gin.Context) {
-	var movie = models.Netflix
+	var movie = models.Netflix{}
 	insertOneMovie(movie)
 	g.IndentedJSON(http.StatusCreated, movie)
 }
@@ -182,3 +185,4 @@ func DeleteAllMovies(g *gin.Context) {
 	numOfMovies := deleteAllMovie()
 	g.IndentedJSON(http.StatusAccepted, numOfMovies)
 }
+
