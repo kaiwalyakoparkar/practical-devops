@@ -48,6 +48,8 @@ func init() {
 
 //Mongo helper used to just push the data to mongodb database
 func insertOneMovie(movie models.Netflix) {
+	fmt.Println(movie)
+
 	//Inserting the data into the database
 	inserted, err := collection.InsertOne(context.Background(), movie)
 
