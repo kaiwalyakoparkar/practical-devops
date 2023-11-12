@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	// "os"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/kaiwalyakoparkar/practical-devops/tree/main/Languages/Go/Projects/models"
@@ -14,7 +14,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	// "github.com/joho/godotenv"
+	"github.com/joho/godotenv"
 )
 
 
@@ -25,8 +25,7 @@ var collection *mongo.Collection
 
 //Method to connect and initiate the database
 func init() {
-	// var connectionString = os.Getenv("DB_STRING")
-	var connectionString = "mongodb+srv://kaiwalya:whoknowswhy@cluster0.j6ba02j.mongodb.net/?retryWrites=true&w=majority"
+	var connectionString = os.Getenv("DB_STRING")
 
 	//Attaching the stream to the options
 	clientOption := options.Client().ApplyURI(connectionString)
