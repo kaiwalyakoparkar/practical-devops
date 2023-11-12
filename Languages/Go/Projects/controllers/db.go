@@ -14,7 +14,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	// "github.com/joho/godotenv"
+	"github.com/joho/godotenv"
 )
 
 
@@ -59,7 +59,7 @@ func insertOneMovie(movie models.Netflix) {
 	}
 
 	//Printing out the id of the inserted data (id comes from mongodb)
-	fmt.Println("Inserter one movie in DB with id", inserted.InsertedID)
+	fmt.Println("Inserted one movie in DB with id", inserted.InsertedID)
 }
 
 //Mongo helper to update the data in database (change watched to true/false)
@@ -162,7 +162,12 @@ func GetAllMovies(g *gin.Context) {
 
 //Calls the helper method to create the movie
 func CreateMovie(g *gin.Context) {
-	var movie = models.Netflix{}
+	//Previously failed at `var movie = models.Netflix{}`
+	var movie models.Netflix
+	if err := g.ShouldBindJSON(&movie); err != nil {
+		g.IndentedJSON(http.StatusBadRequest, err)
+		return
+	}
 	insertOneMovie(movie)
 	g.IndentedJSON(http.StatusCreated, movie)
 }
