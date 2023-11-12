@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
+	// "os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/kaiwalyakoparkar/practical-devops/tree/main/Languages/Go/Projects/models"
@@ -25,7 +25,8 @@ var collection *mongo.Collection
 
 //Method to connect and initiate the database
 func init() {
-	var connectionString = os.Getenv("DB_STRING")
+	// var connectionString = os.Getenv("DB_STRING")
+	var connectionString = "mongodb+srv://kaiwalya:whoknowswhy@cluster0.j6ba02j.mongodb.net/?retryWrites=true&w=majority"
 
 	//Attaching the stream to the options
 	clientOption := options.Client().ApplyURI(connectionString)
@@ -59,7 +60,7 @@ func insertOneMovie(movie models.Netflix) {
 	}
 
 	//Printing out the id of the inserted data (id comes from mongodb)
-	fmt.Println("Inserter one movie in DB with id", inserted.InsertedID)
+	fmt.Println("Inserted one movie in DB with id", inserted.InsertedID)
 }
 
 //Mongo helper to update the data in database (change watched to true/false)
@@ -162,7 +163,12 @@ func GetAllMovies(g *gin.Context) {
 
 //Calls the helper method to create the movie
 func CreateMovie(g *gin.Context) {
-	var movie = models.Netflix{}
+	//Previously failed at `var movie = models.Netflix{}`
+	var movie models.Netflix
+	if err := g.ShouldBindJSON(&movie); err != nil {
+		g.IndentedJSON(http.StatusBadRequest, err)
+		return
+	}
 	insertOneMovie(movie)
 	g.IndentedJSON(http.StatusCreated, movie)
 }
