@@ -28,9 +28,8 @@ func main ()  {
 	s := "Kaiwalya Koparkar"
 	fmt.Println(s);
 
-	fmt.Print(b)
-	fmt.Print("Welcome ", str, " your marks are ", i, "\n");
-	fmt.Println(f)
+	fmt.Println(b)
+	fmt.Printf("Welcome %v, your marks are %v \n", str, f);
 	fmt.Printf("Your grades are %d \n", i)
-	fmt.Print(name)
+	fmt.Println(name)
 }
